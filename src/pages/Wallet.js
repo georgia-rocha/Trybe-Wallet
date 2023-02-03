@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Header from '../components/Header';
 
 class Wallet extends React.Component {
   render() {
     return (
       <div>
-        <p>
-          TrybeWallet
-        </p>
+        <Header />
       </div>
     );
   }
 }
 
 Wallet.propTypes = {
+
 };
 
 const mapStateToProps = (state) => ({
