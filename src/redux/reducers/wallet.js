@@ -1,6 +1,8 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 const INITIAL_STATE = {
   currencies: [],
+  expenses: [],
+  field: 0,
 };
 
 function wallet(state = INITIAL_STATE, action) {
@@ -18,6 +20,19 @@ function wallet(state = INITIAL_STATE, action) {
     return {
       ...state,
       error: action.error,
+    };
+  case 'SAVE_EXPENSES':
+    console.log(action.payload);
+    return {
+      ...state,
+      expenses: [...state.expenses,
+        { ...action.payload,
+          id: state.expenses.length }],
+    };
+  case 'SUM_EXPENSES':
+    return {
+      ...state,
+      field: state.field + action.payload,
     };
   default:
     return state;

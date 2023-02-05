@@ -21,6 +21,18 @@ export const apiError = (error) => ({
   type: API_ERROR, error,
 });
 
+export const SAVE_EXPENSES = 'SAVE_EXPENSES';
+export const saveExpenses = (expense) => ({
+  type: SAVE_EXPENSES,
+  payload: expense,
+});
+
+export const SUM_EXPENSES = 'SUM_EXPENSES';
+export const sumExpenses = (value) => ({
+  type: SUM_EXPENSES,
+  payload: value,
+});
+
 export function fetchAPI() {
   return async (dispatch) => {
     try {
@@ -34,6 +46,19 @@ export function fetchAPI() {
     } catch (error) {
       dispatch(apiError(error));
       console.log(error);
+      return error;
+    }
+  };
+}
+
+export function fetchCurrencies() {
+  return async (dispatch) => {
+    try {
+      const response = await fetch('https://economia.awesomeapi.com.br/json/all');
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      dispatch(apiError(error));
       return error;
     }
   };
