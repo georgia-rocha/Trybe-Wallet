@@ -16,8 +16,14 @@ class Header extends Component {
           Email:
           { email }
         </p>
-        <p data-testid="total-field">{ field.toFixed(2) }</p>
-        <p data-testid="header-currency-field">{ currencies }</p>
+        <p data-testid="total-field">
+          Total:
+          { field.toFixed(2) }
+        </p>
+        <p data-testid="header-currency-field">
+          Moeda:
+          { currencies }
+        </p>
       </div>
     );
   }
