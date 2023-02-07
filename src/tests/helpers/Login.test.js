@@ -16,7 +16,7 @@ describe('Testando a page de Login', () => {
     const button = screen.getByRole('button', { name: 'Entrar' });
     expect(button).toBeInTheDocument();
   });
-  it('Testa de o botão começa desabilitado e ', () => {
+  it('Testa de o botão começa desabilitado e depois de iserido os dados ele se habilita e a page é direcionada para rota /carteira', () => {
     const { history } = renderWithRouterAndRedux(<App />);
     const button = screen.getByRole('button', { name: 'Entrar' });
     expect(button).toBeDisabled();
@@ -25,6 +25,7 @@ describe('Testando a page de Login', () => {
     const inputPassword = screen.getByTestId('password-input');
     userEvent.type(inputEmail, 'exemplo@exemplo.com');
     userEvent.type(inputPassword, '123456');
+    expect(button).not.toBeDisabled();
     userEvent.click(button);
 
     const { pathname } = history.location;
