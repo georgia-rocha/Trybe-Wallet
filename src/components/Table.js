@@ -36,8 +36,10 @@ class Table extends Component {
                   .toFixed(2)}
               </td>
               <td>Real</td>
-              <button>Editar</button>
-              <button data-testid="delete-btn">Remover</button>
+              <td>
+                <button>Editar</button>
+                <button data-testid="delete-btn">Remover</button>
+              </td>
             </tr>
           ))}
         </tbody>
