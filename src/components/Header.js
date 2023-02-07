@@ -7,8 +7,15 @@ class Header extends Component {
     currencies: 'BRL',
   };
 
+  sumExpense = () => {
+    const { expenses } = this.props;
+    return expenses.reduce((acc, curr) => (
+      acc + (Number(curr.value) * Number(curr.exchangeRates[curr.currency].ask))
+    ), 0);
+  };
+
   render() {
-    const { field, email } = this.props;
+    const { email } = this.props;
     const { currencies } = this.state;
     return (
       <div>
@@ -17,7 +24,7 @@ class Header extends Component {
           { email }
         </p>
         <p data-testid="total-field">
-          { field.toFixed(2) }
+          { this.sumExpense().toFixed(2) }
         </p>
         <p data-testid="header-currency-field">
           Moeda:
@@ -30,13 +37,12 @@ class Header extends Component {
 
 Header.propTypes = {
   email: PropTypes.string.isRequired,
-  field: PropTypes.number.isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.objectOf).isRequired,
 };
 
 const mapStateToProps = (state) => ({
   email: state.user.email,
-  expense: state.wallet.expenses,
-  field: state.wallet.field,
+  expenses: state.wallet.expenses,
 });
 
 export default connect(mapStateToProps)(Header);

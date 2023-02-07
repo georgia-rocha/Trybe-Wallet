@@ -28,9 +28,8 @@ export const saveExpenses = (expense) => ({
 });
 
 export const SUM_EXPENSES = 'SUM_EXPENSES';
-export const sumExpenses = (value) => ({
+export const sumExpenses = () => ({
   type: SUM_EXPENSES,
-  payload: value,
 });
 
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';

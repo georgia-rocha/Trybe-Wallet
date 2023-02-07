@@ -2,7 +2,6 @@
 const INITIAL_STATE = {
   currencies: [],
   expenses: [],
-  field: 0,
 };
 
 function wallet(state = INITIAL_STATE, action) {
@@ -22,7 +21,6 @@ function wallet(state = INITIAL_STATE, action) {
       error: action.error,
     };
   case 'SAVE_EXPENSES':
-    console.log(action.payload);
     return {
       ...state,
       expenses: [...state.expenses,
@@ -33,11 +31,6 @@ function wallet(state = INITIAL_STATE, action) {
     return {
       ...state,
       expenses: [...state.expenses.filter((expense) => expense.id !== action.payload)],
-    };
-  case 'SUM_EXPENSES':
-    return {
-      ...state,
-      field: state.field + action.payload,
     };
   default:
     return state;

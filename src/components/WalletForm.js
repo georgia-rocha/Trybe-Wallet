@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchAPI, SAVE_EXPENSES, SUM_EXPENSES, fetchCurrencies } from '../redux/actions';
+import { fetchAPI, SAVE_EXPENSES, fetchCurrencies } from '../redux/actions';
 
 class WalletForm extends Component {
   state = {
@@ -27,7 +27,6 @@ class WalletForm extends Component {
     const { dispatch } = this.props;
     const exchangeRates = await dispatch(fetchCurrencies());
     dispatch({ type: SAVE_EXPENSES, payload: { ...this.state, exchangeRates } });
-    this.expenseSum(exchangeRates);
     this.setState({
       value: '',
       description: '',
@@ -35,15 +34,6 @@ class WalletForm extends Component {
       method: 'Cartão de crédito',
       tag: 'Saúde',
     });
-  };
-
-  expenseSum = async (exchangeRates) => {
-    const { dispatch } = this.props;
-    const { value, currency } = this.state;
-    const currenciesFetch = Object.values(exchangeRates);
-    const { ask } = await currenciesFetch.find((curr) => curr.code === currency);
-    const total = parseFloat(ask) * parseFloat(value);
-    dispatch({ type: SUM_EXPENSES, payload: total });
   };
 
   render() {
@@ -132,13 +122,11 @@ class WalletForm extends Component {
 const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
   expenses: state.wallet.expenses,
-  field: state.wallet.field,
 });
 
 WalletForm.propTypes = {
   currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
   dispatch: PropTypes.func.isRequired,
-  // expenses: PropTypes.arrayOf(PropTypes.objectOf).isRequired,
 };
 
 export default connect(mapStateToProps)(WalletForm);
