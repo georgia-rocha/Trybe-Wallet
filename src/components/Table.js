@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 class Table extends Component {
+  componentDidMount() {
+    const { expenses } = this.props;
+    console.log(expenses);
+  }
+
   render() {
     const { expenses } = this.props;
     return (
@@ -21,13 +26,13 @@ class Table extends Component {
           </tr>
         </thead>
         <tbody>
-          { expenses.map((expense, index) => (
-            <tr key={ index }>
+          { expenses.map((expense) => (
+            <tr key={ expense.id }>
               <td>{expense.description}</td>
               <td>{expense.tag}</td>
               <td>{expense.method}</td>
               <td>{ parseFloat(expense.value).toFixed(2)}</td>
-              <td>{expense.currency}</td>
+              <td>{expense.exchangeRates[expense.currency].name}</td>
               <td>
                 {parseFloat(expense.exchangeRates[expense.currency].ask).toFixed(2)}
               </td>
