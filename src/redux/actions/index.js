@@ -33,6 +33,12 @@ export const sumExpenses = (value) => ({
   payload: value,
 });
 
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+export const deleteExpense = (payload) => ({
+  type: DELETE_EXPENSE,
+  payload,
+});
+
 export function fetchAPI() {
   return async (dispatch) => {
     try {
