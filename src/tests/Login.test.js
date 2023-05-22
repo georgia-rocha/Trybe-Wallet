@@ -1,8 +1,8 @@
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { screen } from '@testing-library/react';
-import App from '../../App';
-import { renderWithRouterAndRedux } from './renderWith';
+import App from '../App';
+import { renderWithRouterAndRedux } from './helpers/renderWith';
 
 describe('Testando a page de Login', () => {
   it('Testa se a página renderiza os inputs de email, senha e botão na tela', () => {

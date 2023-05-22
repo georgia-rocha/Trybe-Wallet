@@ -2,6 +2,8 @@
 const INITIAL_STATE = {
   currencies: [],
   expenses: [],
+  edit: false,
+  idEdit: 0,
 };
 
 function wallet(state = INITIAL_STATE, action) {
@@ -31,6 +33,24 @@ function wallet(state = INITIAL_STATE, action) {
     return {
       ...state,
       expenses: [...state.expenses.filter((expense) => expense.id !== action.payload)],
+    };
+  case 'START_EDIT':
+    return {
+      ...state,
+      idEdit: action.payload,
+      edit: true,
+    };
+  case 'EDIT_EXPENSE':
+    return {
+      ...state,
+      expenses: state.expenses.map((expense) => {
+        if (expense.id === state.idEdit) {
+          console.log(state.idEdit);
+          return { ...expense, ...action.payload };
+        }
+        return expense;
+      }),
+      edit: false,
     };
   default:
     return state;

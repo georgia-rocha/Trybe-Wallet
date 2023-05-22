@@ -38,6 +38,18 @@ export const deleteExpense = (payload) => ({
   payload,
 });
 
+export const START_EDIT = 'START_EDIT';
+export const startEdit = (id) => ({
+  type: START_EDIT,
+  payload: id,
+});
+
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+export const editExpense = (payload) => ({
+  type: EDIT_EXPENSE,
+  payload,
+});
+
 export function fetchAPI() {
   return async (dispatch) => {
     try {

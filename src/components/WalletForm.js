@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchAPI, SAVE_EXPENSES, fetchCurrencies } from '../redux/actions';
+import { fetchAPI, SAVE_EXPENSES, fetchCurrencies, EDIT_EXPENSE } from '../redux/actions';
 
 class WalletForm extends Component {
   state = {
@@ -36,8 +36,18 @@ class WalletForm extends Component {
     });
   };
 
+  handleExpense = async () => {
+    const { dispatch } = this.props;
+    const { edit } = this.props;
+    if (edit) {
+      console.log(this.state);
+      return dispatch({ type: EDIT_EXPENSE, payload: { ...this.state } });
+    }
+    this.handleClick();
+  };
+
   render() {
-    const { currencies } = this.props;
+    const { currencies, edit } = this.props;
     const { value, description, currency, method, tag } = this.state;
     return (
       <div>
@@ -109,9 +119,11 @@ class WalletForm extends Component {
         </label>
         <button
           type="button"
-          onClick={ () => this.handleClick() }
+          onClick={ () => this.handleExpense() }
         >
-          Adicionar despesa
+          {
+            edit ? 'Editar despesa' : 'Adicionar Despesa'
+          }
         </button>
       </div>
 
@@ -122,11 +134,13 @@ class WalletForm extends Component {
 const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
   expenses: state.wallet.expenses,
+  edit: state.wallet.edit,
 });
 
 WalletForm.propTypes = {
   currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
   dispatch: PropTypes.func.isRequired,
+  edit: PropTypes.bool.isRequired,
 };
 
 export default connect(mapStateToProps)(WalletForm);
