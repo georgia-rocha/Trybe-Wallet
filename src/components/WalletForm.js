@@ -99,11 +99,12 @@ class WalletForm extends Component {
           </label>
           <label htmlFor="currency" className="labelSelect w-1/3">
             Moeda:
+            {'  '}
             <select
               data-testid="currency-input"
               id="currency"
               name="currency"
-              className="select-wallet"
+              className="select-wallet ml-2"
               value={ currency }
               onChange={ this.handleChange }
             >

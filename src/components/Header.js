@@ -22,21 +22,21 @@ class Header extends Component {
     const { currencies } = this.state;
     return (
       <div className="container-header">
-        <img src={ imgLogo } alt="logoTrybe" className="w-1/3 h-16 pr-8" />
+        <img src={ imgLogo } alt="logoTrybe" className="w-1/3 h-12 pr-8" />
         <div className="flex w-1/3 justify-center items-center text-alura-100">
           <img src={ moeda } alt="vectorMoeda" />
-          <p data-testid="total-field" className="pl-2 text-lg font-bold">
+          <p data-testid="total-field" className="pl-2 text-sm font-bold">
             Total de despesas:
             {' '}
             { this.sumExpense().toFixed(2) }
           </p>
-          <p data-testid="header-currency-field" className="pl-2 text-lg font-bold">
+          <p data-testid="header-currency-field" className="pl-2 text-sm font-bold">
             { currencies }
           </p>
         </div>
         <div className="text-emerald-500 flex w-1/3 justify-center pl-10">
           <img src={ emailImg } alt="vectorEmail" />
-          <p data-testid="email-field" className="pl-2 text-lg font-bold">
+          <p data-testid="email-field" className="pl-2 text-sm font-bold">
             Email:
             {' '}
             { email }

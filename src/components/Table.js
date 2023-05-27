@@ -15,8 +15,8 @@ class Table extends Component {
     const { expenses, dispatch } = this.props;
     return (
       <div className="container-table">
-        <table className="bg-blue-700 text-white rounded-lg mx-auto w-full ">
-          <thead className="mt-60">
+        <table className="text-white">
+          <thead className="mt-60 text-sm">
             <tr>
               <th className="th">Descrição</th>
               <th className="th">Tag</th>
@@ -29,35 +29,35 @@ class Table extends Component {
               <th className="th">Editar/Excluir</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-sm">
             {expenses.map((expense) => (
               <tr key={ expense.id } className="border-b-2 border-white">
-                <td className="py-4">{expense.description}</td>
-                <td className="py-4">{expense.tag}</td>
-                <td className="py-4">{expense.method}</td>
-                <td className="py-4">{parseFloat(expense.value).toFixed(2)}</td>
-                <td className="py-4">{expense.exchangeRates[expense.currency].name}</td>
-                <td className="py-4">
+                <td>{expense.description}</td>
+                <td>{expense.tag}</td>
+                <td>{expense.method}</td>
+                <td>{parseFloat(expense.value).toFixed(2)}</td>
+                <td>{expense.exchangeRates[expense.currency].name}</td>
+                <td>
                   {parseFloat(expense.exchangeRates[expense.currency].ask).toFixed(2)}
                 </td>
-                <td className="py-4">
+                <td>
                   {parseFloat(expense.value * expense.exchangeRates[expense.currency].ask)
                     .toFixed(2)}
                 </td>
-                <td className="py-4">Real</td>
-                <td className="py-4">
+                <td>Real</td>
+                <td>
                   <div className="flex justify-center h-20">
                     <button
                       data-testid="edit-btn"
                       onClick={ () => this.handleStartEdit(expense.id) }
                     >
-                      <img src={ editar } alt="editar" className="h-8 w-20" />
+                      <img src={ editar } alt="editar" className="h-6 w-20" />
                     </button>
                     <button
                       data-testid="delete-btn"
                       onClick={ () => dispatch(deleteExpense(expense.id)) }
                     >
-                      <img src={ remove } alt="remover" className="h-8 w-20" />
+                      <img src={ remove } alt="remover" className="h-6 w-20" />
                     </button>
                   </div>
                 </td>
