@@ -6,7 +6,7 @@ import Table from '../components/Table';
 class Wallet extends React.Component {
   render() {
     return (
-      <div className="h-screen w-screen">
+      <div className="h-full w-screen">
         <WalletForm />
         <Table />
       </div>
