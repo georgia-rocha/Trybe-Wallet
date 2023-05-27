@@ -3,7 +3,7 @@
 
 ![git-trybeWallet](trybeWallet.gif)
 
-[Deploy](https://georgia-rocha.github.io/Trybe-Wallet)
+[Deploy](https://georgia-rocha.github.io/trybe-wallet)
 
 <summary><strong>O que foi desenvolvido</strong></summary><br />
   Foi desenvolvido uma aplicação de uma carteira de controle de gastos com conversor de moedas, sua estilização e seus testes,
