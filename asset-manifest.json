@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Trybe-Wallet/static/css/main.68180200.css",
+    "main.js": "/Trybe-Wallet/static/js/main.9bd36385.js",
+    "static/media/fotofundo.png": "/Trybe-Wallet/static/media/fotofundo.118ebfaed5b1fa7e1d5c.png",
+    "static/media/Wallet.svg": "/Trybe-Wallet/static/media/Wallet.df8281234c226101cdad94feb42ea401.svg",
+    "static/media/Moedas.svg": "/Trybe-Wallet/static/media/Moedas.d1f519e98e84b43e5b72082a7c755616.svg",
+    "static/media/Vector.svg": "/Trybe-Wallet/static/media/Vector.bb28b6ee5ed63b019518c906ff503058.svg",
+    "static/media/adc.svg": "/Trybe-Wallet/static/media/adc.bcdcb7233e354bc7f7caff6cb1c1a199.svg",
+    "index.html": "/Trybe-Wallet/index.html",
+    "static/media/remove.svg": "/Trybe-Wallet/static/media/remove.114dc02e69ff44cb4f7138437e19413b.svg",
+    "main.68180200.css.map": "/Trybe-Wallet/static/css/main.68180200.css.map",
+    "main.9bd36385.js.map": "/Trybe-Wallet/static/js/main.9bd36385.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68180200.css",
+    "static/js/main.9bd36385.js"
+  ]
+}
