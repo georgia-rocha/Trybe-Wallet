@@ -7,7 +7,7 @@ import { renderWithRouterAndRedux } from './helpers/renderWith';
 describe('Testando a page de Login', () => {
   it('Testa se a página renderiza os inputs de email, senha e botão na tela', () => {
     renderWithRouterAndRedux(<App />);
-    const inputEmail = screen.getByLabelText('Email:');
+    const inputEmail = screen.getByTestId('email-input');
     expect(inputEmail).toBeInTheDocument();
 
     const inputPassword = screen.getByTestId('password-input');
@@ -21,7 +21,7 @@ describe('Testando a page de Login', () => {
     const button = screen.getByRole('button', { name: 'Entrar' });
     expect(button).toBeDisabled();
 
-    const inputEmail = screen.getByLabelText('Email:');
+    const inputEmail = screen.getByTestId('email-input');
     const inputPassword = screen.getByTestId('password-input');
     userEvent.type(inputEmail, 'exemplo@exemplo.com');
     userEvent.type(inputPassword, '123456');
