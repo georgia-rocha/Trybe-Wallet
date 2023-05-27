@@ -1,5 +1,5 @@
 
-# Boas-vindas ao repositório do projeto de Trybe Wallet! 🚀
+# Boas-vindas ao Projeto de Trybe Wallet! 🚀
 
 ![git-trybeWallet](trybeWallet.gif)
 

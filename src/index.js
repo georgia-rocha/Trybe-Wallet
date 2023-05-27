@@ -10,7 +10,7 @@ import store from './redux/store';
 ReactDOM
   .createRoot(document.getElementById('root'))
   .render(
-    <BrowserRouter homepage="/Trybe-Wallet">
+    <BrowserRouter>
       <Provider store={ store }>
         <App />
       </Provider>
