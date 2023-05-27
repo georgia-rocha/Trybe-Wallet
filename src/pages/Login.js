@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { LOGIN } from '../redux/actions';
+import img from '../Wallet.svg';
 
 class Login extends React.Component {
   state = {
@@ -38,34 +39,32 @@ class Login extends React.Component {
   render() {
     const { isDisabled, email, password } = this.state;
     return (
-      <form>
-        <label htmlFor="email">
-          Email:
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="digite seu email"
-            data-testid="email-input"
-            onChange={ this.handleChange }
-            value={ email }
-          />
-        </label>
-        <label htmlFor="password">
-          Senha:
-          <input
-            type="password"
-            name="password"
-            data-testid="password-input"
-            placeholder="Digite sua senha"
-            onChange={ this.handleChange }
-            value={ password }
-          />
-        </label>
+      <form className="formLogin">
+        <img src={ img } alt="logo=trybe" />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="digite seu email"
+          data-testid="email-input"
+          onChange={ this.handleChange }
+          value={ email }
+          className="input"
+        />
+        <input
+          type="password"
+          name="password"
+          data-testid="password-input"
+          placeholder="Digite sua senha"
+          onChange={ this.handleChange }
+          value={ password }
+          className="input"
+        />
         <button
           type="button"
           disabled={ isDisabled }
           onClick={ this.handleClick }
+          className="buttonFom"
         >
           Entrar
         </button>

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import imgLogo from '../Wallet.svg';
+import moeda from '../Moedas.svg';
+import emailImg from '../Vector.svg';
 
 class Header extends Component {
   state = {
@@ -18,18 +21,27 @@ class Header extends Component {
     const { email } = this.props;
     const { currencies } = this.state;
     return (
-      <div>
-        <p data-testid="email-field">
-          Email:
-          { email }
-        </p>
-        <p data-testid="total-field">
-          { this.sumExpense().toFixed(2) }
-        </p>
-        <p data-testid="header-currency-field">
-          Moeda:
-          { currencies }
-        </p>
+      <div className="container-header">
+        <img src={ imgLogo } alt="logoTrybe" className="w-1/3 h-16 pr-8" />
+        <div className="flex w-1/3 justify-center items-center text-alura-100">
+          <img src={ moeda } alt="vectorMoeda" />
+          <p data-testid="total-field" className="pl-2 text-lg font-bold">
+            Total de despesas:
+            {' '}
+            { this.sumExpense().toFixed(2) }
+          </p>
+          <p data-testid="header-currency-field" className="pl-2 text-lg font-bold">
+            { currencies }
+          </p>
+        </div>
+        <div className="text-emerald-500 flex w-1/3 justify-center pl-10">
+          <img src={ emailImg } alt="vectorEmail" />
+          <p data-testid="email-field" className="pl-2 text-lg font-bold">
+            Email:
+            {' '}
+            { email }
+          </p>
+        </div>
       </div>
     );
   }
