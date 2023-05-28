@@ -15,8 +15,6 @@
   
 O projeto foi todo desenvolvido usando o Tailwind e a estilização foi de acordo com o proposto pela Trybe através do Figma;
 
-  ![img-teste-trybeWallet](teste.png)
-
 # Tecnologias utilizadas <a name="tecnologias"></a>
 - [**React**](https://legacy.reactjs.org/docs/getting-started.html)
 - [**Redux**](https://redux.js.org/)
@@ -26,8 +24,8 @@ O projeto foi todo desenvolvido usando o Tailwind e a estilização foi de acord
 - [**Linter**](https://eslint.org/docs/latest/)
 - [**Figma**](https://www.figma.com/best-practices/guide-to-developer-handoff/components-styles-and-documentation/)
 
-<details>
-  <summary><strong>Para Clonar e testar a aplicação</strong></summary>
+
+ ## Para Clonar e testar a aplicação 👩‍🎓
   
 ### Será necessário ter instalado na sua máquina:
      
@@ -56,7 +54,6 @@ O projeto foi todo desenvolvido usando o Tailwind e a estilização foi de acord
   ```
   npm test
   ```
-</details>
 
 <summary><strong>Pontos importantes</strong></summary><br/>
 
@@ -64,6 +61,9 @@ O projeto foi todo desenvolvido usando o Tailwind e a estilização foi de acord
   estado utilizando Redux, RTL, Metodologias Ágeis, React Router, Ciclo de vida dos componentes, HOFs.
 * A partir deste projeto pude perceber a importância de fazer a estrutura das pages e componests já pensando na estilização,
 pois termina se tornando muito mais prático e rápido de se estilizar;
+* Outro ponto importante é a cobertura de teste, onde pode-se testar por componente ou page, os testes bateram aproximanamente 90% de cobertura e eles ajudam caso a aplicação quebre;
+
+  ![img-teste-trybeWallet](teste.png)
 
 # Requisitos Obrigatórios 100%
 
